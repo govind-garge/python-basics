@@ -53,6 +53,9 @@ python basic.py
 Below are the full example snippets (copied from each script). Run any snippet by executing `python <script>.py`.
 
 ### `basic.py`
+
+Demonstrates basic syntax: printing output, declaring variables, checking types, simple type conversions, and using arithmetic/logical/comparison operators.
+
 ```python
 # Python is a case sensitive language
 
@@ -95,6 +98,9 @@ print("Python Comparison Operators a == b: ", a == b)
 ---
 
 ### `console-input.py`
+
+Shows how to read user input from the console using `input()` and use the provided value in the program.
+
 ```python
 # take input from console
 a = input("input from console - Enter your name:")
@@ -104,6 +110,9 @@ print("input from console - Your name is:", a)
 ---
 
 ### `file-io.py`
+
+Covers opening files for writing/appending/reading, using `with` for context management, reading by bytes/lines, and common file modes.
+
 ```python
 # Write in the file
 f = open("demo-file-io.txt", "w")
@@ -151,6 +160,9 @@ f.close()
 ---
 
 ### `dictionary-sets.py`
+
+Shows dictionary creation and operations (nested dictionaries, access methods, updates) and basic set creation/operations.
+
 ```python
 # Dictionary examples
 my_dic = {}
@@ -175,6 +187,9 @@ print("Set in python:", my_set)
 ---
 
 ### `functions.py`
+
+Demonstrates defining functions, default arguments, an iterative factorial implementation, recursion, and returning values.
+
 ```python
 # Simple function
 def sum(a, b):
@@ -220,6 +235,9 @@ print("Factorial with Recursion function final output:", fact_rec(5))
 ---
 
 ### `if-statement.py`
+
+Simple conditional flow example illustrating `if`, `elif`, and `else` branches and how the conditions are evaluated.
+
 ```python
 age = 21
 if age >= 18:
@@ -233,6 +251,9 @@ else:
 ---
 
 ### `list-tuple.py`
+
+Demonstrates list creation, indexing, slicing, length and sorting, and shows tuple immutability and type.
+
 ```python
 my_list = [1, 2, 3, 4, 5, 6, 7, 8]
 print("type of list:", type(my_list))
@@ -250,6 +271,9 @@ print("type of tuple:", type(my_tuple))
 ---
 
 ### `loops.py`
+
+Examples of `while` and `for` loops, iterating lists, and control statements `break` and `continue` to influence loop flow.
+
 ```python
 # While loop counter
 count = 1
@@ -291,6 +315,9 @@ else:
 ---
 
 ### `oops.py`
+
+Covers object-oriented concepts: classes, constructors, public/private attributes and methods, static/class methods, property, inheritance examples, and a simple `Bank_Account` demo.
+
 ```python
 # Public and private attributes
 class Students:
@@ -356,6 +383,9 @@ for el in range(10, 0, -1):
 ---
 
 ### `string-function.py`
+
+Demonstrates string concatenation, case conversion, length, indexing and slicing, and lists common built-in string methods.
+
 ```python
 # string concatenation
 print("string concatination" + " hello" + " world")
