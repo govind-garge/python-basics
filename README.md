@@ -48,65 +48,324 @@ python basic.py
 
 ---
 
-## Samples
+## Examples
 
-Below is a summary of the specific samples and demonstrations included in each script.
+Below are the full example snippets (copied from each script). Run any snippet by executing `python <script>.py`.
 
-- `basic.py`
-  - Hello world and `print()` examples
-  - Declaring variables and common types (str, int, float, bool, None)
-  - Checking types with `type()`
-  - Type conversion (`int()`, `float()`, `str()`)
-  - Arithmetic, logical, and comparison operator examples
+### `basic.py`
+```python
+# Python is a case sensitive language
 
-- `console-input.py`
-  - Using `input()` to read user input from the console and printing it
+#print
+print("hello world")
 
-- `file-io.py` (+ `demo-file-io.txt`)
-  - Writing files (`w`) and appending (`a`, `a+`)
-  - Reading full files with `read()` and partial reads with `read(n)`
-  - `readline()` to read single lines
-  - Using `with open(...) as f` context manager
-  - Explanation of file modes and common functions (`seek`, `tell`, etc.)
+# Declare Variable
+name = "Tata punch"
+quantity = 5
+price = 12.5
+old = True
+order_total = None
 
-- `dictionary-sets.py`
-  - Creating and updating dictionaries, nested dictionaries
-  - Accessing values with `[]` and `get()`
-  - Common dictionary methods (`keys()`, `items()`, `update()`, `pop()`)
-  - Creating sets and set operations (`add`, `update`, `remove`, `union`, `intersection`, `difference`)
+# print variable
+print("My name is :", name)
 
-- `functions.py`
-  - Defining functions with `def` and returning values
-  - Default parameter values
-  - Iterative factorial example
-  - Recursive function examples and factorial via recursion
+# check variable type
+print(type(name))
+print(type(quantity))
+print(type(price))
+print(type(old))
+print(type(order_total))
 
-- `if-statement.py`
-  - `if`, `elif`, and `else` branching examples
+# Type conversion
+a = int("152")
+b = float("152.25")
+c = str(152.25)
+print("convert data types, string to integer", type(a))
+print("convert data types, string to float", type(b))
+print("convert data types, Float to string", type(c))
 
-- `list-tuple.py`
-  - Creating and modifying lists, indexing, slicing
-  - Common list methods (`append`, `insert`, `sort`, `reverse`, `count`)
-  - Tuple creation and immutability discussion
+# Example
+a = 10
+b = 20
+print("Python Arithmetic Operators a+b: ", a + b)
+print("Python Logical Operators a and b: ", a and b)
+print("Python Comparison Operators a == b: ", a == b)
+```
 
-- `loops.py`
-  - `while` loop (counter and iterating a list)
-  - `break` and `continue` examples
-  - `for` loop over lists and `for...else` behavior
+---
 
-- `oops.py` (OOP samples)
-  - Public and private attributes and methods
-  - Static methods and class methods
-  - Inheritance: single, multi-level, and multiple inheritance examples
-  - `@property` usage and property-like methods
-  - Operator overloading demonstration and a small `Bank_Account` demo
+### `console-input.py`
+```python
+# take input from console
+a = input("input from console - Enter your name:")
+print("input from console - Your name is:", a)
+```
 
-- `range.py`
-  - Using `range()` with `start`, `stop`, `step` and reverse iteration examples
+---
 
-- `string-function.py`
-  - String concatenation, `upper()`, `len()`, indexing and slicing
-  - Common string methods (`find`, `replace`, `count`, `startswith`, `endswith`, `split`, `join`, etc.)
+### `file-io.py`
+```python
+# Write in the file
+f = open("demo-file-io.txt", "w")
+f.write("Content added by code\n")
+f.close()
+
+# Append
+f = open("demo-file-io.txt", "a")
+f.write("Content appended by code\n")
+f.close()
+
+# a+ read and append
+f = open("demo-file-io.txt", "a+")
+f.write("Content appended by code\n")
+data = f.read()
+print("File I/O a+ read all content:", data)
+f.close()
+
+# Read all
+f = open("demo-file-io.txt", "r")
+data = f.read()
+print("File I/O content all content:", data)
+f.close()
+
+# With context manager
+with open("demo-file-io.txt", "r") as f:
+    data = f.read()
+    print("File I/O with and alias all content:", data)
+
+# Read 5 characters
+f = open("demo-file-io.txt", "r")
+data = f.read(5)
+print("File I/O content read 5 charactor:", data)
+f.close()
+
+# Single line
+f = open("demo-file-io.txt", "r")
+line1 = f.readline()
+print("File I/O content read single line:", line1)
+line2 = f.readline()
+print("File I/O content read single line:", line2)
+f.close()
+```
+
+---
+
+### `dictionary-sets.py`
+```python
+# Dictionary examples
+my_dic = {}
+my_dic["name"] = "Govind"
+
+my_dictionary = {
+    "name": "Govind",
+    "City": "Pune",
+    "mobile": 9999999999,
+    "list": [1, 2, 3, 4, 5, 6, 7],
+    "sub_dictionaty": {"name": "sub dictionary"}
+}
+
+print("Dictionary:", my_dictionary)
+print("Get Dictionary item:", my_dictionary.get("name"))
+
+# Set examples
+my_set = {1, 2, 3, 4.5, "any string"}
+print("Set in python:", my_set)
+```
+
+---
+
+### `functions.py`
+```python
+# Simple function
+def sum(a, b):
+    return a + b
+
+print("Function output:", sum(10, 5))
+
+# Default parameters
+def default_sum(a=1, b=1):
+    return a + b
+
+print("Function output:", default_sum())
+
+# Iterative factorial
+def cal_factorial(n=1):
+    i = 1
+    factorial = 1
+    while i <= n:
+        factorial = factorial * i
+        i += 1
+    return factorial
+
+print("Factorial Function output:", cal_factorial(5))
+
+# Recursive example
+def my_recursion(n):
+    if n == 0:
+        return
+    print("Recursion function:", n)
+    my_recursion(n - 1)
+
+my_recursion(5)
+
+# Factorial recursion
+def fact_rec(n):
+    if n == 0 or n == 1:
+        return 1
+    return fact_rec(n - 1) * n
+
+print("Factorial with Recursion function final output:", fact_rec(5))
+```
+
+---
+
+### `if-statement.py`
+```python
+age = 21
+if age >= 18:
+    print("if statement executed")
+elif age < 18:
+    print("else if statement execute")
+else:
+    print("invalid age")
+```
+
+---
+
+### `list-tuple.py`
+```python
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+print("type of list:", type(my_list))
+my_list[7] = 1
+print(my_list)
+print("Slicing values from list:", my_list[0:4])
+print("count of list :", len(my_list))
+my_list.sort(reverse=True)
+print(my_list)
+
+my_tuple = (1, 2, 3, 4, 5, 6, 7, 8)
+print("type of tuple:", type(my_tuple))
+```
+
+---
+
+### `loops.py`
+```python
+# While loop counter
+count = 1
+while count <= 5:
+    print("while loop:", count)
+    count += 1
+
+# While with list
+my_list = [5, 85, 5, 6, 4]
+i = 0
+while i < len(my_list):
+    print("while loop with list:", my_list[i])
+    i = i + 1
+
+# break example
+count = 1
+while count <= 5:
+    print("while loop with break:", count)
+    if count == 3:
+        break
+    count += 1
+
+# continue example
+count = 1
+while count <= 5:
+    if count == 3:
+        count += 1
+        continue
+    print("while loop with coutinue:", count)
+    count += 1
+
+# for loop
+for el in my_list:
+    print("for loop with list:", el)
+else:
+    print("for loop with list and else, it will execute after loop end")
+```
+
+---
+
+### `oops.py`
+```python
+# Public and private attributes
+class Students:
+    def __init__(self, acc_no, password):
+        self.acc_no = acc_no
+        self.__password = password
+
+    def __show_msg_private(self):
+        msg = "this msg is from private method"
+        return msg
+
+    def show_msg_public(self):
+        message = self.__show_msg_private()
+        return message
+
+student_obj = Students("223452534", "govi@#$%")
+print("Student public variable:", student_obj.acc_no)
+print("Student public method:", student_obj.show_msg_public())
+
+# Operations class demo
+class Operations:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add_val(self):
+        return self.a + self.b
+
+    def substract_val(self, val1, val2):
+        return val1 - val2
+
+    @staticmethod
+    def showmsg():
+        print("this is static method output")
+
+    @staticmethod
+    def multiply(x, y):
+        return x * y
+
+object1 = Operations(10, 5)
+print("Add Result :", object1.add_val())
+print("Substract Result :", object1.substract_val(10, 2))
+object1.showmsg()
+print("Static method result:", object1.multiply(5, 5))
+
+# Inheritance examples and Bank_Account demo (see file for full details)
+```
+
+---
+
+### `range.py`
+```python
+for el in range(5):
+    print("for loop range with stop:", el)
+for el in range(1, 10):
+    print("for loop range start and stop:", el)
+for el in range(2, 11, 2):
+    print("for loop range start and stop and step:", el)
+for el in range(10, 0, -1):
+    print("for loop range Reverse:", el)
+```
+
+---
+
+### `string-function.py`
+```python
+# string concatenation
+print("string concatination" + " hello" + " world")
+
+a = "govind"
+print("Output of String function:", a.upper())
+print("Output of String Len:", len(a))
+print("Access Charactor from String:", a[0])
+print("Slicing Charactors from String:", a[0:4])
+```
 
 ---
 
