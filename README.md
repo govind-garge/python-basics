@@ -136,4 +136,5 @@ This project is provided as-is for learning purposes. Feel free to reuse and ada
 
 ---
 
-> _Generated and maintained by GitHub Copilot (Raptor mini, Preview)._
+## 👨‍💻 Author
+Created with ❤️ by Govind Garge
